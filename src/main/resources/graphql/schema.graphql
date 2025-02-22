@@ -1,0 +1,17 @@
+type Query {
+    employeeByName(name : String) : [EmployeeDTO]
+}
+
+type EmployeeDTO {
+    name : String
+    lastName : String
+    age : Int
+    department : String
+}
+
+input Employee {
+    name : String
+    lastName : String
+    age : Int
+    department : String
+}
