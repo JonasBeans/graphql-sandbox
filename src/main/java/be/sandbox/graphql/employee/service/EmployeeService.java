@@ -1,5 +1,6 @@
 package be.sandbox.graphql.employee.service;
 
+import be.sandbox.graphql.common.update.EntityUpdater;
 import be.sandbox.graphql.employee.dto.input.EmployeeInputDTO;
 import be.sandbox.graphql.employee.dto.output.EmployeeOutputDTO;
 import be.sandbox.graphql.employee.entity.Employee;
@@ -47,7 +48,7 @@ public class EmployeeService {
     }
 
     public EmployeeOutputDTO updateEmployee(EmployeeInputDTO input) {
-        return Employee.update(
+        return EntityUpdater.update(
                 input,
                 employeeRepository.findById(input.getId())
                         .orElseThrow(EmployeeCompareException::throwEmployeeNotFoundException),
