@@ -1,11 +1,9 @@
-package be.sandbox.graphql.employee.dto;
+package be.sandbox.graphql.employee.dto.output;
 
 import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
 
 @Builder
-public record EmployeeDTO(
+public record EmployeeOutputDTO(
         String name,
         String lastName,
         int age,

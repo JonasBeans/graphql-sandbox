@@ -1,17 +1,29 @@
 type Query {
-    employeeByName(name : String) : [EmployeeDTO]
+    findEmployeeByName(name : String) : [EmployeeOutputDTO]
+    findAllEmployees :  [EmployeeOutputDTO]
 }
 
-type EmployeeDTO {
+enum Department{
+    CLEANING,
+    IT,
+    HR,
+    SALES
+}
+
+type Mutation {
+    createEmployee(employee : EmployeeInputDTO) : EmployeeOutputDTO
+}
+
+type EmployeeOutputDTO {
     name : String
     lastName : String
     age : Int
     department : String
 }
 
-input Employee {
+input EmployeeInputDTO {
     name : String
     lastName : String
     age : Int
-    department : String
+    department : Department
 }
