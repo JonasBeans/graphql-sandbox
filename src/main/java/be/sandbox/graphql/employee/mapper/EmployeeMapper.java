@@ -7,10 +7,11 @@ public class EmployeeMapper {
 
     public static EmployeeOutputDTO mapFrom(Employee employee) {
         return EmployeeOutputDTO.builder()
-                .name(employee.name())
-                .lastName(employee.lastName())
-                .age(employee.age())
-                .department(employee.department())
+                .id(employee.getId())
+                .name(employee.getName())
+                .lastName(employee.getLastName())
+                .age(employee.getAge())
+                .department(employee.getDepartment())
                 .build();
     }
 }

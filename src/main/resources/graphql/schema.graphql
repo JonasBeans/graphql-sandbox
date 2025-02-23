@@ -12,9 +12,11 @@ enum Department{
 
 type Mutation {
     createEmployee(employee : EmployeeInputDTO) : EmployeeOutputDTO
+    updateEmployee(employee : EmployeeInputDTO) : EmployeeOutputDTO
 }
 
 type EmployeeOutputDTO {
+    id: ID
     name : String
     lastName : String
     age : Int
@@ -22,6 +24,7 @@ type EmployeeOutputDTO {
 }
 
 input EmployeeInputDTO {
+    id: ID
     name : String
     lastName : String
     age : Int

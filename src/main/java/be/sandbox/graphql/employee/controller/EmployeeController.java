@@ -32,4 +32,9 @@ public class EmployeeController {
         return employeeService.createEmployee(employee);
     }
 
+    @MutationMapping
+    public EmployeeOutputDTO updateEmployee(@Argument EmployeeInputDTO employee) {
+        return employeeService.updateEmployee(employee);
+    }
+
 }
